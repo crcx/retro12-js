@@ -7,7 +7,7 @@
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 function loadInitialImage() {
-  image = ngaImage;
+  image = ngaImage.slice();
 }
 
 function execute(offset) {
