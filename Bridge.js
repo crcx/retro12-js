@@ -18,7 +18,7 @@ function execute(offset) {
   while (ip < IMAGE_SIZE) {
     opcode = image[ip];
     if (ip == notfound) {
-      document.getElementById('console').value += "<p>err:notfound : " + string_extract(1471) + "<br>";
+      document.getElementById('console').value += "err:notfound : " + string_extract(1471) + "\n";
       console.log("err:notfound");
       console.log(" - __" + string_extract(1471) + "__");
     }
