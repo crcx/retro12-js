@@ -16,6 +16,72 @@ This is the twelfth generation of the language and related programming
 environment. It is a fresh start and is not compatible with the
 previous generation.
 
+## About This
+
+This is a JavaScript implementation of Nga and Retro's UI. It's similar
+to the interface used for the iOS implementation.
+
+Try it at: [http://forthworks.com:8000/](http://forthworks.com:8000/)
+
+Interface:
+
+    +-------------+-------------+
+    | editor area | toolbar     |
+    |             +-------------+
+    |             | output      |
+    |             |             |
+    |             |             |
+    |             |             |
+    |             |             |
+    |             |             |
+    |             |             |
+    |             +-------------+
+    |             | listener    |
+    +-------------+-------------+
+
+In the editor:
+
+* Code goes in fenced regions (start and end with ````)
+* Everything outside these is commentary
+* This is cached as you work
+
+Toolbar:
+
+* Save / reload a snapshot of the editor contents
+* Clear the output
+* "Go" to evaluate the code in the editor
+
+Listener:
+
+* Type a line of code, hit enter to run immediately
+
+Example:
+
+    # Debugging Aids
+
+    These display words with a particular class.
+
+
+    ````
+    :words:immediate (-)
+      [ dup d:class fetch &class:macro eq?
+        [ d:name puts sp ] [ drop ] choose ] d:for-each ;
+    :words:normal    (-)
+      [ dup d:class fetch &class:word eq?
+        [ d:name puts sp ] [ drop ] choose ] d:for-each ;
+    :words:data      (-)
+      [ dup d:class fetch &class:data eq?
+        [ d:name puts sp ] [ drop ] choose ] d:for-each ;
+    ````
+
+    # Tests
+
+    ````
+    #3 #2 #1 '%n+%n=%n s:with-format puts nl
+    $a $b $c .s nl reset
+    #12 n:square putn nl
+    ````
+
 ## Legalities
 
 Permission to use, copy, modify, and/or distribute this software for
